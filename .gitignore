@@ -1,20 +1,62 @@
-
 ###> symfony/framework-bundle ###
+/.*.env.local
+/.*-env
 /.env.local
 /.env.local.php
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
+/.env.test
+/.env.rhdev
+/.env.devops
 /public/bundles/
-/var/
+/var/cache/
+/var/log/
 /vendor/
+/assets/js/routing/routes.json
 ###< symfony/framework-bundle ###
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+test.sqlite-journal
+###< symfony/phpunit-bridge ###
+
+###< JetBrains ###
+.idea
+###> JetBrains ###
+
+###> storage ###
+/storage/tmp
+!/storage/tmp/.gitkeep
+###< storage ###
+
+/README.deploy-info.txt
+/README.configure-info.txt
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> VScode settings
+.vscode
+###< VScode settings
+
+###> PhpUnit Results Cache
+.phpunit.result.cache
+###< PhpUnit Results Cache
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
 
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
-
-###> symfony/phpunit-bridge ###
-.phpunit.result.cache
-/phpunit.xml
-###< symfony/phpunit-bridge ###

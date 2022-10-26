@@ -10,8 +10,14 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
+    #[Route('/', name: 'app_entry')]
+    public function index()
+    {
+        return $this->render("body.html.twig");
+    }
+
     #[Route('/login', name: 'app_login')]
-    public function index(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -26,11 +32,17 @@ class LoginController extends AbstractController
     }
 
     /**
-     * @return JsonResponse
+     * @return Response
      */
     #[Route('/protected', name: 'app_protected')]
-    public function protectedEndpoint(): JsonResponse
+    public function protectedEndpoint(): Response
     {
-        return $this->json('it works');
+        return $this->render("body.html.twig");
+    }
+
+    #[Route('/protected1', name: 'app_second_protected')]
+    public function secondProtectedEndpoint(): Response
+    {
+        return $this->render("body.html.twig");
     }
 }
